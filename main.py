@@ -10,6 +10,9 @@ import urllib.parse
 from push import push
 from config import data, headers, cookies, READ_NUM, PUSH_METHOD, book, chapter
 
+# 阅读次数在 ±20% 范围内随机
+READ_NUM = random.randint(int(READ_NUM * 0.8), int(READ_NUM * 1.2))
+
 # 配置日志格式
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)-8s - %(message)s')

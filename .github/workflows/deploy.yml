@@ -53,6 +53,9 @@ jobs:
         READ_NUM: ${{ vars.READ_NUM }}  # 使用 Repository Variables
 
       run: |
+        delay=$((RANDOM % 1801))
+        echo "随机延迟 ${delay} 秒后启动..."
+        sleep $delay
         python main.py
 
   keepalive-job:
